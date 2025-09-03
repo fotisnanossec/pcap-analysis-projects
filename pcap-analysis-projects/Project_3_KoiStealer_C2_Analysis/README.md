@@ -37,32 +37,7 @@ The PCAP file analyzed in this project was sourced from [Malware-Traffic-Analysi
 * **Python Scripts:** A set of custom scripts designed for automated triage, DNS, and HTTP analysis.
 * **Open-Source Intelligence (OSINT):** Services like AbuseIPDB and VirusTotal were used to check the reputation of IPs and file hashes.
 
-## How to Replicate This Analysis
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/Project_3_KoiStealer_C2_Analysis.git](https://github.com/your-username/Project_3_KoiStealer_C2_Analysis.git)
-    cd Project_3_KoiStealer_C2_Analysis
-    ```
-2.  **Download the PCAP:**
-    Download the PCAP from the source link above and place it in the `pcaps/` directory.
-3.  **Run the analysis scripts:**
-    *(Ensure you have `tshark` and Python 3 installed)*
-    ```bash
-    python3 scripts/pcap_triage.py pcaps/2024-09-04-traffic-analysis-exercise.pcap
-    python3 scripts/dns_agent.py pcaps/2024-09-04-traffic-analysis-exercise.pcap
-    python3 scripts/http_agent.py pcaps/2024-09-04-traffic-analysis-exercise.pcap
-    ```
-4.  **Extract Files:**
-    Use `tshark` to export files from the HTTP stream.
-    ```bash
-    tshark -r pcaps/2024-09-04-traffic-analysis-exercise.pcap --export-objects http,./extracted_files
-    ```
-5.  **Analyze Hashes:**
-    Calculate the SHA256 hashes of the extracted files and check them on VirusTotal to confirm their status.
-    ```bash
-    sha256sum extracted_files/foots.php
-    ```
     
 
 ---
